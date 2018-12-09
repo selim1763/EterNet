@@ -1,0 +1,12 @@
+﻿  Application.cpp
+c:\dev\eternet\eternet\src\eternet\application.h(8): error C2079: 'Application' uses undefined class 'etn::ETN_API'
+c:\dev\eternet\eternet\src\eternet\application.h(9): error C2059: syntax error: 'public'
+c:\dev\eternet\eternet\src\eternet\application.h(11): error C2588: '::~Application': illegal global destructor
+c:\dev\eternet\eternet\src\eternet\application.h(11): error C2575: 'Application': only member functions and bases can be virtual
+c:\dev\eternet\eternet\src\eternet\application.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\dev\eternet\eternet\src\eternet\application.h(11): error C2365: 'etn::Application': redefinition; previous definition was 'data variable'
+  c:\dev\eternet\eternet\src\eternet\application.h(8): note: see declaration of 'etn::Application'
+c:\dev\eternet\eternet\src\eternet\application.h(18): error C2059: syntax error: '}'
+c:\dev\eternet\eternet\src\eternet\application.h(18): error C2143: syntax error: missing ';' before '}'
+c:\dev\eternet\eternet\src\eternet\application.cpp(4): error C2143: syntax error: missing ';' before '{'
+c:\dev\eternet\eternet\src\eternet\application.cpp(4): error C2447: '{': missing function header (old-style formal list?)

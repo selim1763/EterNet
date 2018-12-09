@@ -18,42 +18,21 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\EterNet\ByteBuffer.h" />
-    <ClInclude Include="src\EterNet\Client.h" />
-    <ClInclude Include="src\EterNet\ClientHandler.h" />
-    <ClInclude Include="src\EterNet\ClientSession.h" />
-    <ClInclude Include="src\EterNet\Core.h" />
-    <ClInclude Include="src\EterNet\Packet.h" />
-    <ClInclude Include="src\EterNet\ProcessFlow.h" />
-    <ClInclude Include="src\EterNet\Server.h" />
-    <ClInclude Include="src\EterNet\ServerHandler.h" />
-    <ClInclude Include="src\EterNet\Timer.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\EterNet\Client.cpp" />
-    <ClCompile Include="src\EterNet\ClientHandler.cpp" />
-    <ClCompile Include="src\EterNet\ClientSession.cpp" />
-    <ClCompile Include="src\EterNet\Packet.cpp" />
-    <ClCompile Include="src\EterNet\ProcessFlow.cpp" />
-    <ClCompile Include="src\EterNet\Server.cpp" />
-    <ClCompile Include="src\EterNet\ServerHandler.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{8E83DFD9-BBC1-42C0-AC62-529D282D9ADD}</ProjectGuid>
-    <RootNamespace>EterNet</RootNamespace>
+    <ProjectGuid>{1D1FC792-1219-4618-8A5E-C21031E7C06A}</ProjectGuid>
+    <RootNamespace>Client</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -103,7 +82,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>ETN_PLATFORM_WINDOWS;ETN_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)EterNet\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ETN_PLATFORM_WINDOWS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -120,7 +100,8 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>ETN_PLATFORM_WINDOWS;ETN_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)EterNet\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ETN_PLATFORM_WINDOWS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -140,6 +121,14 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EterNet\EterNet.vcxproj">
+      <Project>{8e83dfd9-bbc1-42c0-ac62-529d282d9add}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
